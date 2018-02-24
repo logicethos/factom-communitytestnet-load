@@ -4,7 +4,7 @@
     docker build -t test-load github.com/logicethos/factom-communitytestnet-load
 
     docker run --rm -it \
-            -e FACTOM_HOST="http://localhost:8088/v2"" \
+            -e FACTOM_HOST="http://localhost:8088/v2" \
             -e ENTRYCREDITS="EC......" \
             -e CHAIN_ID="" \
             test-load
