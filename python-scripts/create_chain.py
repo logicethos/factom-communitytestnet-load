@@ -3,7 +3,8 @@ import settings, time
 factomd = Factomd()
 walletd = FactomWalletd()
 
-walletd.host = factomd.host = settings.Host
+walletd.host = settings.WalletdHost
+factomd.host = settings.FactomdHost
 
 Extid1 = 'Test chain entries '
 Extid2 = time.strftime("%Y-%m-%d %H:%M")

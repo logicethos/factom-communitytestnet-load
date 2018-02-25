@@ -1,5 +1,15 @@
 import os
 
-Host = os.environ['FACTOM_HOST']
+if 'FACTOMD_HOST' in os.environ:
+    FactomdHost = os.environ['FACTOMD_HOST']
+else:
+    FactomdHost = "http://factomd_node:8088/v2"
+    
+if 'WALLETD_HOST' in os.environ:
+    WalletdHost = os.environ['WALLETD_HOST']
+else:
+    WalletdHost = "http://factomd_node:8089"
+
+    
 EntryCredits = os.environ['ENTRYCREDITS']
 ChainID = os.environ['CHAIN_ID']

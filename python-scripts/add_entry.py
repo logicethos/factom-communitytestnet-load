@@ -3,7 +3,9 @@ from factom import Factomd, FactomWalletd
 import time, settings
 factomd = Factomd()
 walletd = FactomWalletd()
-walletd.host = factomd.host = settings.Host
+
+walletd.host = settings.WalletdHost
+factomd.host = settings.FactomdHost
 
 timeBetweenEntries=0
 start=1701
