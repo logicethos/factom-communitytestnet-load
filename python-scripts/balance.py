@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from factom import Factomd, FactomWalletd
 import settings
 factomd = Factomd()

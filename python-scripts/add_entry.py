@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from time import gmtime, strftime
 from factom import Factomd, FactomWalletd
 import time, settings
@@ -26,7 +28,7 @@ for line in f:
 ## Set chain ID to add entries to
 ## Set default values for Extid1 and 2
 #####################################
-entryCredit = settings.EntryCredit
+entryCredit = settings.EntryCredits
 chainID     = settings.ChainID
 Extid1	    = 'PrimeNumbers.txt'
 Extid2      = 'P-1000000.txt'

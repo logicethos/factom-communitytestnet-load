@@ -3,7 +3,7 @@
 
     docker build -t test-load github.com/logicethos/factom-communitytestnet-load
 
-To run on federated server
+To run on federated server (note port 8089 must be exposed)
 
     docker run --rm -it \
             --net communitytestnet_factomd \
@@ -26,9 +26,9 @@ Note leave CHAIN_ID empty if not yet created
 
 To create a new chain id:
 
-    python create_chain.py
+    ./create_chain.py
 
-Then to set it it:
+Then set your new chain id as an environment variable:
 
-    export CHAIN_ID = <your new chain id>
+    export CLASSPATH=$(cat CHAIN_ID)
 
