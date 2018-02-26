@@ -5,7 +5,7 @@
     docker build -t test-load github.com/logicethos/factom-communitytestnet-load
 
 Note, when running on a federated server, port 8089 must be "exposed" which it wasn't on the original version.
-If your running on a remote or personal node, see options (below).
+If your running on a remote or personal node, see network settings (below).
 
 **To create a new Chain ID:**
 
@@ -23,7 +23,9 @@ If your running on a remote or personal node, see options (below).
             test-load
 
 
-**Optional network settings (remove --net communitytestnet_factomd):**
+**Optional network settings:**
+
+remove --net communitytestnet_factomd and replace with:
 
     -e FACTOMD_HOST="http://localhost:8088/v2" \
     -e WALLETD_HOST="http://localhost:8089" \
