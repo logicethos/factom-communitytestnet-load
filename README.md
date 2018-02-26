@@ -5,30 +5,30 @@
 
 To run on federated server (note port 8089 must be exposed)
 
+To create a new Chain ID:
+
     docker run --rm -it \
             --net communitytestnet_factomd \
             -e ENTRYCREDITS="EC......" \
-            -e CHAIN_ID="" \
-            test-load
+            test-load create_chain.py
 
-To run on external factomd and factomwalletd node
+To start writing test data:
 
     docker run --rm -it \
-            -e FACTOMD_HOST="http://localhost:8088/v2" \
-            -e WALLETD_HOST="http://localhost:8089" \
+            --net communitytestnet_factomd \
             -e ENTRYCREDITS="EC......" \
-            -e CHAIN_ID="" \
+            -e CHAIN_ID="....." \
             test-load
 
 
+Optional network settings (remove --net communitytestnet_factomd):
 
-Note leave CHAIN_ID empty if not yet created
+    -e FACTOMD_HOST="http://localhost:8088/v2" \
+    -e WALLETD_HOST="http://localhost:8089" \
 
-To create a new chain id:
+Optional Time Interval between writes:
 
-    ./create_chain.py
+    -e SECS="10"
 
-Then set your new chain id as an environment variable:
 
-    export CLASSPATH=$(cat CHAIN_ID)
-
+Note, when running on a federated server, port 8089 must be "exposed" which it wasn't on the original version.

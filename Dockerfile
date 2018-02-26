@@ -9,8 +9,6 @@ RUN pip install factom-api
 WORKDIR /root
 COPY python-scripts/* ./
 
+ENV PATH="/root:${PATH}"
 
-ENTRYPOINT ["/bin/bash"]
-
-
-
+CMD ["/root/add_entry.py"]
