@@ -12,7 +12,9 @@ else:
 
     
 EntryCredits = os.environ['ENTRYCREDITS']
-ChainID = os.environ['CHAIN_ID']
+
+if 'CHAIN_ID' in os.environ:
+    ChainID = os.environ['CHAIN_ID']
 
 if 'SECS' in os.environ:
     TimeInterval = os.environ['SECS']
